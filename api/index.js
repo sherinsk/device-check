@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
         os = 'Linux';
     }
 
-    res.send(`Request is from a device running: ${os}`);
+    res.send(`Request is from a device running on : ${os}`);
 });
 
 // Start the server
