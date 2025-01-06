@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 app.get('/pay', (req, res) => {
     const payee = "sherinsk007@ybl"; // Your UPI ID
     const payeeName = "Sherin";      // Payee's name
-    const amount = 100;             // Payment amount
+    const amount = 1000;             // Payment amount
     const currency = "INR";         // Currency
 
     // Construct the UPI URL
