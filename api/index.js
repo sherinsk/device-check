@@ -22,6 +22,19 @@ app.get('/', (req, res) => {
     res.send(`Request is from a device running on : ${os}`);
 });
 
+app.get('/pay', (req, res) => {
+    const payee = "sherinsk007@ybl"; // Your UPI ID
+    const payeeName = "Sherin";      // Payee's name
+    const amount = 100;             // Payment amount
+    const currency = "INR";         // Currency
+
+    // Construct the UPI URL
+    const upiUrl = `upi://pay?pa=${payee}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=${currency}`;
+
+    // Redirect to the UPI link
+    res.redirect(upiUrl);
+});
+
 // Start the server
 const PORT = 3000;
 app.listen(PORT, () => {
