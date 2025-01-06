@@ -35,6 +35,22 @@ app.get('/pay', (req, res) => {
     res.redirect(upiUrl);
 });
 
+
+app.get('/pay2', (req, res) => {
+    const payee = "sherinsk007@ybl"; // Your UPI ID
+    const payeeName = "Sherin";      // Payee's name
+    const amount = 1000;             // Payment amount
+    const currency = "INR";         // Currency
+    const transactionNote = "Kayyil 10nte paisa illaaa guyssss....";
+
+    // Construct the UPI URL
+    // const upiUrl = `upi://pay?pa=${payee}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=${currency}`;
+    const upiUrl = `upi://pay?pa=${payee}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=${currency}&tid=${encodeURIComponent(transactionNote)}`
+
+    // Redirect to the UPI link
+    res.redirect(upiUrl);
+});
+
 // Start the server
 const PORT = 3000;
 app.listen(PORT, () => {
